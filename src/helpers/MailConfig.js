@@ -15,7 +15,6 @@ const sendMail = async (receiver, OTP) => {
         text: `your one time password is ${OTP}`
     };
     try {
-        // send mail
         await transporter.sendMail(mailOptions);
         console.log('Email sent successfully');
     } catch (error) {
