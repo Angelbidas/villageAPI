@@ -1,6 +1,6 @@
 
 const adminlogin = {
-    tags: ['User'],
+    tags: ['authentication'],
     description: "sign up user",
     requestBody: {
         content: {
@@ -45,6 +45,30 @@ const adminlogin = {
                                     type: "String",
                                     example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluZXhhbXBsZUBnbWFpbC5jb20iLCJpYXQiOjE2ODA3MDU2MjEsImV4cCI6MTY4MDcwOTIyMX0.eoOr9wEZkg1KueBwHgmyX8gr5Wl9j2BoUbwZOOcvj-E"
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        201: {
+            description: "OK",
+            content: {
+                "application/json": {
+                    type: 'object',
+                    properties: {
+                        status: {
+                            type: 'number',
+                            example: 200,
+                        },
+                        data: {
+                            type: "object",
+                            properties: {
+                                message: {
+                                    type: "String",
+                                    example: "password not matching"
+                                }
+
                             }
                         }
                     }
