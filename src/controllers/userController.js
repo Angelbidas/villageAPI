@@ -38,7 +38,7 @@ exports.getAllUsers = async (req, res, next) => {
   }
 };
 
-exports.addHouse = async (req, res) => {
+exports.addHouse = async (req, res,next) => {
   let ids = [];
   let i = 0;
   const arrayData = req.body;
@@ -69,6 +69,7 @@ exports.addHouse = async (req, res) => {
   try {
      const houseData = await houseModel.create(house);
      res.status(200).json({ message: "success", houseData });
+     next();
    } catch (error) {
      res.status(404).json({ message: error.message });
    }

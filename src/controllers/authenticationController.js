@@ -52,7 +52,7 @@ class authenticationController {
                 }
             } catch (error) {
                 console.log(error);
-                res.status(500).json({ "message": "internal server error" })
+                res.status(500).json({ "message": "internal server errorr" })
             }
         } else {
             console.log("sent otp == " + sentOtp + "session otp ==" + OTP);

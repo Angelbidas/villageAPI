@@ -14,6 +14,18 @@ class adminAUthentication {
             res.status(404).json({ "message": "unable to signup" })
         }
     }
+    static async muduguduprivilage(req, res) {
+        const id=req.body.id;
+        const mudugudu = await userModel.findOne({ nID: id });
+        mudugudu.role="mudugudu";
+        try {
+            const data = await mudugudu.updateOne(mudugudu._id,mudugudu);
+            res.status(200).json({ "message": "successfully updated" })
+        } catch (error) {
+            console.log(error);
+            res.status(404).json({ "message": "unable to update" })
+        }
+    }
     static async loginUser(req, res) {
         const emaill = req.body.email;
         const password = req.body.password;
